@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		DD79978A2B42EC2D00003364 /* JokesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7997892B42EC2D00003364 /* JokesAppApp.swift */; };
-		DD79978C2B42EC2D00003364 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79978B2B42EC2D00003364 /* ContentView.swift */; };
+		DD79978C2B42EC2D00003364 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79978B2B42EC2D00003364 /* MainView.swift */; };
 		DD79978E2B42EC2E00003364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD79978D2B42EC2E00003364 /* Assets.xcassets */; };
 		DD7997912B42EC2E00003364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7997902B42EC2E00003364 /* Preview Assets.xcassets */; };
+		DD7997992B42EF3E00003364 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7997982B42EF3E00003364 /* JokeModel.swift */; };
+		DD79979E2B42F22300003364 /* JokeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79979D2B42F22300003364 /* JokeListViewModel.swift */; };
+		DD7997A12B42F3D000003364 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD7997A02B42F3D000003364 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD7997862B42EC2D00003364 /* JokesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7997892B42EC2D00003364 /* JokesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesAppApp.swift; sourceTree = "<group>"; };
-		DD79978B2B42EC2D00003364 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD79978B2B42EC2D00003364 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DD79978D2B42EC2E00003364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7997902B42EC2E00003364 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD7997982B42EF3E00003364 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		DD79979D2B42F22300003364 /* JokeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeListViewModel.swift; sourceTree = "<group>"; };
+		DD7997A22B43032100003364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7997A12B42F3D000003364 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +58,11 @@
 		DD7997882B42EC2D00003364 /* JokesApp */ = {
 			isa = PBXGroup;
 			children = (
-				DD7997892B42EC2D00003364 /* JokesAppApp.swift */,
-				DD79978B2B42EC2D00003364 /* ContentView.swift */,
+				DD7997A22B43032100003364 /* Info.plist */,
+				DD79979C2B42F1D800003364 /* ViewModel */,
+				DD79979B2B42F1D200003364 /* View */,
+				DD79979A2B42F1CC00003364 /* Service */,
+				DD7997972B42EF3200003364 /* Model */,
 				DD79978D2B42EC2E00003364 /* Assets.xcassets */,
 				DD79978F2B42EC2E00003364 /* Preview Content */,
 			);
@@ -65,6 +75,38 @@
 				DD7997902B42EC2E00003364 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD7997972B42EF3200003364 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD7997982B42EF3E00003364 /* JokeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD79979A2B42F1CC00003364 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DD79979B2B42F1D200003364 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD7997892B42EC2D00003364 /* JokesAppApp.swift */,
+				DD79978B2B42EC2D00003364 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD79979C2B42F1D800003364 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD79979D2B42F22300003364 /* JokeListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +125,9 @@
 			dependencies = (
 			);
 			name = JokesApp;
+			packageProductDependencies = (
+				DD7997A02B42F3D000003364 /* Alamofire */,
+			);
 			productName = JokesApp;
 			productReference = DD7997862B42EC2D00003364 /* JokesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +156,9 @@
 				Base,
 			);
 			mainGroup = DD79977D2B42EC2D00003364;
+			packageReferences = (
+				DD79979F2B42F3D000003364 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DD7997872B42EC2D00003364 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD79978C2B42EC2D00003364 /* ContentView.swift in Sources */,
+				DD79978C2B42EC2D00003364 /* MainView.swift in Sources */,
 				DD79978A2B42EC2D00003364 /* JokesAppApp.swift in Sources */,
+				DD7997992B42EF3E00003364 /* JokeModel.swift in Sources */,
+				DD79979E2B42F22300003364 /* JokeListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +324,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JokesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JokesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +353,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JokesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JokesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD79979F2B42F3D000003364 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD7997A02B42F3D000003364 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD79979F2B42F3D000003364 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD79977E2B42EC2D00003364 /* Project object */;
 }
