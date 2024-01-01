@@ -4,7 +4,7 @@ The app shows Chuck Norris jokes.
 
 ## Alamofire
 
-In this app I have used Alamofire. I have used Alamofire for getting request from API.
+In this app I have used Alamofire for getting request from API.
 
 
 
